@@ -1,0 +1,8 @@
+<div style="border:solid black 1px" *ngFor="let user of users" >
+<p>Username: {{user.username}}</p>
+<p>Firstname: {{user.firstName}}</p>
+<p>Lastname: {{user.lastName}}</p>
+<button style="background-color:lightseagreen" class="btn btn-primary" ><a style="color:white" [routerLink]="['/editUser',user._id]">Edit</a></button>
+
+
+</div>

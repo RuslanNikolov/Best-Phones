@@ -1,0 +1,56 @@
+<form  (ngSubmit)="buyPhone(buyForm.value)" #buyForm ="ngForm"class="form-inline" >
+    <div class="form-group">
+        <label for="pwd">First Name:</label> <br>
+        <input type="text" class="form-control" id="pwd"
+        required 
+        [(ngModel)]="buyModel.firstName" name ="firstName" #firstName= "ngModel">
+        
+      </div>
+     
+<br>
+  <div class="form-group">
+    <label for="pwd">Last Name:</label> <br>
+    <input type="text" class="form-control" id="pwd"
+    required 
+    [(ngModel)]="buyModel.lastName" name ="lastName" #lastName= "ngModel">
+    
+  </div>
+  <br>
+  <div class="form-group">
+      <label for="pwd">City:</label> <br>
+      <input type="text" class="form-control" id="pwd"
+      required 
+      [(ngModel)]="buyModel.city" name ="city" #city= "ngModel">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="pwd">Phone number:</label> <br>
+        <input type="text" class="form-control" id="pwd"
+        required 
+        [(ngModel)]="buyModel.phoneNumber" name ="phoneNumber" #phoneNumber= "ngModel">
+        
+      </div>
+     <br>
+     <div class="form-group">
+        <label for="pwd">Shipping adress:</label> <br>
+        <input type="text" class="form-control" id="pwd"
+        required 
+        [(ngModel)]="buyModel.shippingAdress" name ="shippingAdress" shippingAdress= "ngModel">
+        
+      </div>
+     <br>
+     <div class="form-group">
+        <label for="exampleFormControlSelect1">Select buying method</label> <br>
+        <select [(ngModel)]="buyModel.paymentMethod" name ="paymentMethod" paymentMethod= "ngModel" class="form-control" id="exampleFormControlSelect1">
+          <option>Directly from the courier</option>
+          <option>Credit card</option>
+          <option>Leasing</option>
+        </select>
+      </div>
+      
+      <p id="location"></p>
+
+     
+  <br>
+  <button  type="submit" style="background-color:darkorange" class="btn btn-primary">Buy phone</button>
+</form>

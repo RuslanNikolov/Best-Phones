@@ -1,0 +1,27 @@
+<form (ngSubmit)="editUser(userForm.value)" #userForm ="ngForm"class="form-inline side" >
+    <div class="form-group">
+        <label for="pwd">Username:</label>
+        <input type="text" class="form-control" id="pwd"
+        required 
+        [(ngModel)]="userModel.username" name ="username" #username= "ngModel">
+        
+      </div>
+     
+<br>
+  <div class="form-group">
+    <label for="pwd">First Name</label>   
+    <input type="text" class="form-control" id="pwd"
+    required 
+    [(ngModel)]="userModel.firstName" name ="firstName" #firstName= "ngModel">
+  </div>
+  <br>
+  <div class="form-group">
+      <label for="pwd">Last Name</label>
+      <input type="text" class="form-control" id="pwd"
+      required 
+      [(ngModel)]="userModel.lastName" name ="lastName" #lastName= "ngModel">
+    </div>
+    
+  <br>
+  <button  type="submit" style="background-color:cornflowerblue;transform:translateX(20px)" class="btn btn-primary side">Edit User</button>
+</form>

@@ -1,0 +1,71 @@
+
+
+<form (ngSubmit)="createPhone(phoneForm.value)" #phoneForm ="ngForm"class="form-inline side-by-side" >
+    <div class="form-group">
+        <label for="pwd">Name:</label>
+        <input style="transform:translateX(28px)" type="text" class="form-control" id="pwd"
+        required 
+        [(ngModel)]="phoneModel.name" name ="name" #name= "ngModel">
+        
+      </div>
+     
+<br>
+  <div class="form-group">
+    <label for="pwd">RAM:</label>
+    <input style="transform:translateX(36px)" type="text" class="form-control" id="pwd"
+    required 
+    [(ngModel)]="phoneModel.ram" name ="ram" #ram= "ngModel">
+    <label style="transform:translateX(36px)" for="pwd">GB </label>
+  </div>
+  <br>
+  <div class="form-group">
+      <label for="pwd">Processor:</label>
+      <input  type="text" class="form-control" id="pwd"
+      required 
+      [(ngModel)]="phoneModel.processor" name ="processor" #processor= "ngModel">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="pwd">Camera:</label>
+        <input style="transform:translateX(16px)" type="text" class="form-control" id="pwd"
+        required 
+        [(ngModel)]="phoneModel.camera" name ="camera" #camera= "ngModel">
+        <label style="transform:translateX(16px)" for="pwd">MP</label>
+      </div>
+     <br>
+     <div class="form-group">
+        <label for="pwd">Battery:</label>
+        <input style="transform:translateX(19px)" type="text" class="form-control" id="pwd"
+        required 
+        [(ngModel)]="phoneModel.battery" name ="battery" #battery= "ngModel">
+        <label style="transform:translateX(19px)"for="pwd">mAh</label>
+      </div>
+     <br>
+        <div class="form-group">
+            <label for="pwd">Image:</label>
+            <input style="transform:translateX(27px)"type="text" class="form-control" id="pwd"
+            required 
+            [(ngModel)]="phoneModel.img" name ="img" #img= "ngModel">
+          </div>
+  <br>
+  <button  type="submit" style="background-color:cornflowerblue;transform:translateX(20px)" class="btn btn-primary">Create Phone</button>
+</form>
+
+
+
+<br>
+<div class="side-by-side right">
+<div  class="phone-element" *ngFor="let phone of phones" >
+  
+  <img  class="image" src="{{phone.img}}" alt="Invalid Image URL">
+  <p>{{phone.name}}</p>
+  <p>RAM: {{phone.ram}} GB || PROCESSOR: {{phone.processor}} || CAMERA: {{phone.camera}} MP || BATTERY: {{phone.battery}} mAh</p>
+  
+  <button  *ngIf ="this.user == phone._acl.creator" style="background-color:lightseagreen" class="btn btn-primary" ><a style="color:white" [routerLink]="['/editPhone',phone._id]">Edit</a></button>
+  <button *ngIf ="this.user == phone._acl.creator"  style="background-color:crimson" class="btn btn-primary" (click)="deletePhone(phone['_id'])">Delete</button> 
+  
+</div>
+</div>
+<br>
+  <br>
+  <br>

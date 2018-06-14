@@ -1,0 +1,12 @@
+<div class="container">
+    <div *ngFor="let phone of phones">
+        
+        <img class="image" src="{{phone.img}}" alt="phone image">
+        <h2>{{phone.name}}</h2>
+        <h4>Shipping adress:</h4> 
+        <p>{{phone.shippingAdress}}</p>
+        <h4>Payment method:</h4>
+        <p>{{phone.paymentMethod}}</p>
+        
+      </div>
+    </div>

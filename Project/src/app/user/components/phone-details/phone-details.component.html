@@ -1,0 +1,41 @@
+<div *ngIf="isDataAvailable">
+
+<div class="paragraphs">
+  <div class="row">
+    <div class="span4">
+      <img class ="image" style="float:left" src="{{phone.img}}" alt="image">
+      <div class="content-heading"><h2>{{phone.name}}</h2><p style="left:80px;right:80px" style="color:darkblue">
+        RAM: {{phone.ram}} GB <br>
+        Processr: {{phone.processor}} <br>
+        Camera: {{phone.camera}} MP <br>
+        Battery: {{phone.battery}} mAh <br> <br>
+        <button style="background-color:darkorange" (click)="addToCart()" class="btn btn-primary"><a style="color:white">Add To Cart</a></button>
+      </p>
+
+   
+    <h4>Add review:</h4>
+    <form (ngSubmit)="createReview(reviewForm.value)" #reviewForm ="ngForm" class="form-inline" >
+        <div class="form-group">
+           <input type="text" class="form-control" 
+            required 
+            [(ngModel)]="reviewModel.content" name ="content" #content= "ngModel">
+            
+          </div>
+          <button  type="submit" style="background-color:cornflowerblue; transform:translateX(20px)" class="btn btn-primary">Create Review</button>
+    </form>
+    <h3 style="transform:translateX(40px)">Reviews</h3>
+    <div class="relative">
+      <div *ngFor = "let review of reviews" style="border:solid 1px ;color:cornflowerblue">
+        <button (click)="addLike(review)"class="btn btn-default glyphicon glyphicon-hand-up">{{review.likes}}</button>
+        <p style="color:darkblue">----{{review.author}} <br> <span style="color:black">{{review.content}}</span></p>
+      </div>
+        
+
+      </div>
+  </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+    <div *ngFor="let phone of phones">
+        
+        <img class="image" src="{{phone.img}}" alt="phone image">
+        <h2>{{phone.name}}</h2>
+        <button style="background-color:darkorange" class="btn btn-primary"><a style="color:white" [routerLink]="['/buyPhone',phone._id]">Buy</a></button>
+        
+
+      </div>
+    </div>

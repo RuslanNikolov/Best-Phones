@@ -1,0 +1,6 @@
+.dotted {
+    
+    border-radius: 5px;
+    border: 2px dotted cornflowerblue;
+    
+}

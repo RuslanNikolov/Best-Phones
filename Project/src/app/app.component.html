@@ -1,0 +1,46 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<nav class="navbar navbar-default" >
+  <div class="container-fluid" style="background-color:cornflowerblue">
+    <div  style="border-radius: 8px;border-style: solid;border-color:white;" class="navbar-header">
+      <a  style="color:white" routerLink="/home" class="text-center" class="navbar-brand" href="#">{{title}}</a>
+    </div>
+
+      <ul class="nav navbar-nav"  *ngIf="!authService.isLoggedIn() && !authService.isAdmin()">
+        <li><a  class="navLink"style="color:white" routerLink="/login">Login</a></li>
+        <li><a  class="navLink" style="color:white" routerLink="/register">Register</a></li>
+        <li><a  class="navLink"style="color:white" routerLink="/contacts">Contacts</a></li>
+        <li><a class="navLink" style="color:white" routerLink="/about">About us</a></li>
+       
+      </ul>
+
+    <ul class="nav navbar-nav" *ngIf="authService.isLoggedIn() && !authService.isAdmin() ">
+        <li><a  class="navLink"style="color:white" routerLink="/phones">Phones</a></li>
+        <li><a  class="navLink"style="color:white" routerLink="/cart">My Cart</a></li>
+        <li><a  class="navLink"style="color:white" routerLink="/boughtPhones">Bought Phones</a></li>
+        <li><a class="navLink" style="color:white" routerLink="/contacts">Contacts</a></li>
+        <li><a class="navLink" style="color:white" routerLink="/about">About us</a></li>
+        
+        <li><a class="navLink"style="color:white" routerLink="/logout">Logout</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav" *ngIf="authService.isAdmin()">
+        <li><a  class="navLink"style="color:white" routerLink="/phones">Phones</a></li>
+        <li><a  class="navLink"style="color:white" routerLink="/editPhones">Create/Edit Phones</a></li>
+        <li><a  class="navLink"style="color:white" routerLink="/editUsers">Edit Users</a></li>
+        
+        <li><a class="navLink"style="color:white" routerLink="/logout">Logout</a></li>
+    </ul>
+    </div>
+</nav>
+
+  
+
+
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+  <div style="text-align:center">
+  <h4>Copyright ©2017 Best Phones All Rights Reserved.</h4>
+</div>  

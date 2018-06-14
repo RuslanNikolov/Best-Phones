@@ -1,0 +1,24 @@
+<form (ngSubmit)="listSearchPhones(searchForm.value)" #searchForm ="ngForm"class="form-inline" >
+    <div class="form-group">
+        <input placeholder="Full Name..." type="text" class="form-control" id="pwd"
+        required 
+        [(ngModel)]="searchModel.search" name ="search" #search= "ngModel">
+        
+      </div>
+      <button  type="submit" style="background-color:darkorange;transform:translateX(20px) translateY(-5px)" 
+      class="btn btn-primary" 
+      >Search By Name</button>
+      </form>
+
+      <br><br>
+ <h3 *ngIf="noPhones == true">There are no phones at the moment!</h3>
+ 
+<div class="container">
+<div *ngFor="let phone of phones">
+    
+    <img class="image" src="{{phone.img}}" alt="phone image">
+    <h3>{{phone.name}}</h3>
+    <button class="btn btn-primary"><a style="color:white" [routerLink]="['/phoneDetails',phone._id]">Details</a></button>
+    
+  </div>
+</div>

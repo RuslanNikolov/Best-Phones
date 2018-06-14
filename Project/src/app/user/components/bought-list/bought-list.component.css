@@ -1,0 +1,13 @@
+img {
+    width:160px;
+    height:210px;
+    float:left;
+}
+div{
+    text-align: justify;
+    display: inline-block;
+    
+}
+.container{
+    width: 700px; 
+}

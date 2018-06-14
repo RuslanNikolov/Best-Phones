@@ -1,0 +1,24 @@
+.image {
+    width:215px;
+    height:270px;
+}
+
+.row .paragraphs {
+    width:50px;
+    height:100px;
+}
+#banner{
+    width: 60%;
+    left: 0px;
+    right: 0px;
+}
+
+#banner img{
+    width: 50px;
+    height:100px;
+}
+div.relative {
+    position: relative;
+    left: 30px;
+  
+}

@@ -1,0 +1,22 @@
+.image{
+    width:90px;
+    height:90px;
+}
+
+.phone-list{
+    display: inline
+}
+
+.phone-element{
+    border-top: 2px solid steelblue ;
+}
+
+.side-by-side{
+    display:inline;
+    float:left
+    
+}
+
+.right {
+    transform:translateX(400px)
+}
